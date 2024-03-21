@@ -12,7 +12,7 @@ var [total,setTotal] = useState(null);
 useEffect(()=>{
 async function fetchData(){
 if(name && pass){
-await axios.get('http://localhost:8080/data').then(res=>{console.log(res.data);
+await axios.get('https://server-1-e8d1.onrender.com/data').then(res=>{console.log(res.data);
 setData(res.data);
 let user = res.data.find(user=>user.name === name && user.password === pass)
 if(user){

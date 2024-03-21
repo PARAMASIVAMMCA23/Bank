@@ -31,7 +31,7 @@ let em = email;
 let pass = password;
 let newItem = { name: n, email: em, password: pass, amount: 0 };
 console.log("hi", newItem);
-axios.post("http://localhost:8080/create", newItem);
+axios.post("https://server-1-e8d1.onrender.com/create", newItem);
 if (password.length < 8) {
 alert("Enter Atleast 8 Characters as Password!");
 return;

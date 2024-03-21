@@ -6,10 +6,10 @@ function Alldata() {
 const [data, setData] = useState([]);
 const [delTrigger,setDelTrigger] = useState(false)
 function delClick(id){
-axios.delete(`http://localhost:8080/delete/${id}`).then(setDelTrigger(true))
+axios.delete(`https://server-1-e8d1.onrender.com/delete/${id}`).then(setDelTrigger(true))
 }
 useEffect(()=>{
-axios.get("http://localhost:8080/data").then((item) => {
+axios.get("https://server-1-e8d1.onrender.com/data").then((item) => {
 setData(item.data);
 setDelTrigger(false)
 })
