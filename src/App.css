@@ -1,0 +1,103 @@
+.nav{
+  position: relative;
+  }
+  .nav:hover+.item{
+  display: block;
+  }
+  .item{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 45%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 999;
+  }
+  /* Home page */
+  .title{
+  font-size: 80px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgb(196, 56, 56);
+  text-shadow: 0px 0px 20px yellow;
+  }
+  .header{
+  font-family: cursive;
+  }
+  .msg{
+  font-family: cursive;
+  font-size: 25px;
+  color: green;
+  text-shadow: 0px 0px 20px lightseagreen;
+  }
+  .homeimg{
+  margin: 10px;
+  border-radius: 5px;
+  }
+  .text-center{
+  background-color: lavender;
+  }
+  /* create page */
+  .create{
+  margin-top: 100px;
+  margin-left: 450px;
+  }
+  .account{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: indigo;
+  text-shadow: 0px 0px 15px lightseagreen;
+  }
+  input{
+  display:list-item;
+  margin: 30px;
+  height: 45px;
+  width: 500px;
+  border: 2px solid lightseagreen;
+  border-radius: 10px;
+  text-align: center;
+  }
+  body{
+  background-color: lavender;
+  }
+  button{
+  height: 45px;
+  width: 500px;
+  margin: 30px;
+  background-color: lightskyblue;
+  border: none;
+  border-radius: 10px;
+  }
+  /* deposit withdraw */
+  .total{
+  text-align: center;
+  font-size: 18px;
+  color: darkblue;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding-top: 5px;
+  }
+  /* all data */
+  table {
+  border-collapse: collapse;
+  width: 100%;
+  }
+  th, td {
+  text-align: left;
+  padding: 8px;
+  }
+  tr:nth-child(odd) {background-color:whitesmoke;}
+  .btn-del{
+  height: 40px;
+  width: 35px;
+  background-color: red;
+  opacity: 0.8;
+  margin: 0px;
+  text-align: center;
+  color: white;
+  margin-left: 30px;
+  }
+  
