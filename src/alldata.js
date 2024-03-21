@@ -3,31 +3,56 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function Alldata() {
-const [data, setData] = useState([]);
-const [delTrigger,setDelTrigger] = useState(false)
-function delClick(id){
-axios.delete(`https://server-1-e8d1.onrender.com/delete/${id}`).then(setDelTrigger(true))
-}
-useEffect(()=>{
-axios.get("https://server-1-e8d1.onrender.com/data").then((item) => {
-setData(item.data);
-setDelTrigger(false)
-})
-},[delTrigger])
+  const [data, setData] = useState([]);
+  const [delTrigger, setDelTrigger] = useState(false);
 
-return (
-<>
-<table><tr><th>
-<td>Name</td></th>
-<th><td>Email</td></th>
-<th><td>Password</td></th>
-<th><td>Amount</td></th>
-<th><td>Delete Account</td></th></tr>
-{data.map((item) => (
-<tr><td>{item.name}</td>
-<td>{item.email}</td>
-<td>{item.password}</td>
-<td>{item.amount}</td><td>
-<button onClick={()=>delClick(item._id)} className="btn-del">X</button></td></tr>))}</table></>);
+  // Function to handle delete button click
+  function delClick(id) {
+    axios.delete(`https://server-6tcs.onrender.com/delete/${id}`)
+      .then(() => setDelTrigger(true));
+  }
+
+  // Fetch data from the server when delTrigger state changes
+  useEffect(() => {
+    axios.get("https://server-6tcs.onrender.com/data")
+      .then((item) => {
+        setData(item.data);
+        setDelTrigger(false);
+      });
+  }, [delTrigger]);
+
+  return (
+    <>
+      {/* Table to display data */}
+      <table>
+        <thead>
+          <tr>
+            {/* Table headers */}
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Amount</th>
+            <th>Delete Account</th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* Map over data array to display each item */}
+          {data.map((item) => (
+            <tr key={item._id}>
+              <td>{item.name}</td>
+              <td>{item.email}</td>
+              <td>{item.password}</td>
+              <td>{item.amount}</td>
+              {/* Button to delete account */}
+              <td>
+                <button onClick={() => delClick(item._id)} className="btn-del">X</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  );
 }
+
 export default Alldata;
